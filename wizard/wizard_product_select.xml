@@ -1,0 +1,43 @@
+<odoo>
+
+    <!-- Wizard form view -->
+    <record id="view_product_ozonwb_select_form" model="ir.ui.view">
+        <field name="name">OZON and WB Select product form</field>
+        <field name="model">product.ozonwb.select</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="state" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- An action to make Wizard form view appear in Action menu of product.product model -->
+    <record id="ozon_wb_wizard_form" model="ir.actions.act_window">
+        <field name="name">Upload products to Ozon</field>
+        <!--    Which model action is using-->
+        <field name="res_model">product.ozonwb.select</field>
+        <field name="view_mode">form</field>
+        <!--   ADD MENU ITEM TO ACTION droplist. ref =  In which model action is available-->
+        <field name="binding_model_id" ref="product.model_product_product" />
+        <field name="binding_view_types">form,list</field>
+        <!-- What form ID to open -->
+        <field name="view_id" ref="view_product_ozonwb_select_form" />
+        <field name="target">new</field>
+    </record>
+
+
+    <!-- <record model="ir.actions.server" id="action_ozonwb_menu">
+        <field name="name">Create Job Costing</field>
+        <field name="model_id" ref="product.model_product_product" />
+        <field name="binding_model_id" ref="product.model_product_product" />
+        <field name="state">code</field>
+        <field name="code"></field>
+    </record> -->
+
+
+</odoo>
