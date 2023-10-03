@@ -1,6 +1,7 @@
 from odoo import api, exceptions, fields, models
 import logging
 import requests
+import pprint
 
 
 _logger = logging.getLogger(__name__)
@@ -10,8 +11,30 @@ class ProductSelect(models.TransientModel):
     _description = "Select products to create on Ozon and Wildberries"
 
     state = fields.Selection([('draft', 'Draft'), ('done', 'Done'), ('connected', 'Connected')], string='State', default='draft')
-    # api_id = fields.Integer(string='Api ID', readonly=True,)
-    # api_hash = fields.Char(string='Api Hash', readonly=True,)
+    product_ids = fields.Many2many('product.product', string='Product')
+
+
+    @api.model
+    def default_get(self, field_names):
+        try:
+            defaults_dict = super().default_get(field_names)
+            # Add values to the defaults_dict here
+            print(f'----INFO[default_dicts: {defaults_dict}')
+            
+            product_ids = self.env.context["active_ids"]
+            print(f'----INFO[checkout_ids: {product_ids}')
+            
+            defaults_dict["product_ids"] = [(6, 0, product_ids)]
+            return defaults_dict
+        except Exception as e:
+            raise exceptions.UserError("Error in default_get: {}".format(e))
+
+    def upload_to_ozon(self):
+        print(f'-----self.product_ids: {self.product_ids}')
+        for product_id in self.product_ids:
+            print(f'-----product_id: {product_id.name}')
+            product = self.env['product.product'].search([('id', '=', product_id.id)])
+            pprint.pprint(f"-----product: {self.env['product.product'].browse(product_id.id).read()}")
 
 
 

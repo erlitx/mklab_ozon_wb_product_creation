@@ -10,6 +10,17 @@
                     <group>
                         <field name="state" />
                     </group>
+                    <group>
+                        <label for="product_ids" string="Products:" />
+                    </group>
+                    <field name="product_ids" />
+
+                    <footer>
+                        <button type="object" name="upload_to_ozon" string="Upload to Ozon" />
+                        <button special="cancel" string="Cancel" class="btn-secondary" />
+                    </footer>
+
+
                 </sheet>
             </form>
         </field>
