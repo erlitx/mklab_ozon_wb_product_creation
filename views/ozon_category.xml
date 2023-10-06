@@ -1,5 +1,9 @@
 <odoo>
     <data>
+
+<!-- ozon.category -->
+
+        <!-- Action for tree view -->
         <record id="action_get_ozon_categories" model="ir.actions.act_window">
             <field name="name">Ozon Categoty</field>
             <field name="type">ir.actions.act_window</field>
@@ -9,11 +13,12 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-
+        <!-- Menu item -->
         <menuitem id="menu_get_product_id_ozon" name="Список категорий OZON"
             parent="sale.menu_sale_general_settings" action="action_get_ozon_categories"
             sequence="101" />
 
+        <!-- Tree View  -->
         <record id="view_tree_ozon_category" model="ir.ui.view">
             <field name="name">ozon.category.tree</field>
             <field name="model">ozon.category</field>
@@ -24,39 +29,46 @@
                     <field name="product_id" />
                     <field name="parent_id" />
                     <field name="child_id" />
-                    <!-- Add any other fields you want to display in the tree view -->
                 </tree>
             </field>
         </record>
 
 
-<!-- TEST -->
+<!-- ozon.attribute.values -->
 
-        <record id="action_get_ozon_categories_test" model="ir.actions.act_window">
-            <field name="name">Ozon Categoty Test</field>
+        <!-- Action for tree view -->
+        <record id="action_ozon_attributes" model="ir.actions.act_window">
+            <field name="name">Ozon Attribute Values</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">ozon.category.some</field>
+            <field name="res_model">ozon.attribute</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="menu_get_product_id_ozon_test" name="Список категорий OZON тест"
-            parent="sale.menu_sale_general_settings" action="action_get_ozon_categories_test"
+
+        <!-- Menu item -->
+        <menuitem id="menu_get_product_id_ozon_test" name="Ozon Attribute"
+            parent="sale.menu_sale_general_settings" action="action_ozon_attributes"
             sequence="102" />
 
 
-        <record id="TEST_OZON_VIEW" model="ir.ui.view">
-            <field name="name">ozon.test</field>
-            <field name="model">ozon.category.some</field>
+        <!-- Tree View  -->
+        <record id="ozon_attributes_tree_view" model="ir.ui.view">
+            <field name="name">Ozon Attribute Values Tree View</field>
+            <field name="model">ozon.attribute</field>
             <field name="arch" type="xml">
                 <tree string="Ozon Categories">
                     <field name="name" />
                     <field name="title" />
-                    <field name="product_id" />
-                    <!-- Add any other fields you want to display in the tree view -->
+                    <field name="attribute_id" />
+                    <field name="description" />
+                    <field name="attribute_type" />
+                    <field name="is_required" />
+                    <field name="dictionary_id" />
+
                 </tree>
             </field>
         </record>
-<!-- TEST -->
+
 
     </data>
 </odoo>

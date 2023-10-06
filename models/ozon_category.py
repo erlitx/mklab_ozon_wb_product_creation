@@ -5,17 +5,24 @@ import json
 
 _logger = logging.getLogger(__name__)
 
+
 class OzonCategory(models.Model):
     _description = 'Ozon Category Tree'
     _name = 'ozon.category'
 
     category_id = fields.Char()
+    name = fields.Char(string='Name', compute="_get_name", stored=True, index=True)
     title = fields.Char()
-    name = fields.Char(string='Name', related='title', store=True)
     product_id = fields.Many2one('product.product', string='Product', index=True, ondelete='cascade')
     parent_id = fields.Many2one('ozon.category', string='Parent Category', index=True, ondelete='cascade')
     child_id = fields.One2many('ozon.category', 'parent_id', string='Child Categories')
 
+
+    @api.depends('category_id', 'title')
+    def _get_name(self):
+        for record in self:
+            display_name = f"{record.category_id} - {record.title}"
+            record.name = display_name
 
 
     def category_tree_recursion_create(self, json_data, parent_id=None):
@@ -29,8 +36,8 @@ class OzonCategory(models.Model):
             print(f'***********Category found: {values}')
 
             if item['children']:
-                self.category_tree_recursion_create(item['children'], category.id)
-
+                self.category_tree_recursion_create(
+                    item['children'], category.id)
 
 
     def get_ozon_catalog_tree(self):
@@ -50,8 +57,9 @@ class OzonCategory(models.Model):
             response_content = response.text  # Use .text or .content to access the content
             try:
                 res = response.json()
-                self.env['ozon.category'].category_tree_recursion_create(res['result'])
-                #print(res['result'])
+                self.env['ozon.category'].category_tree_recursion_create(
+                    res['result'])
+                # print(res['result'])
                 # Process the JSON content if it can be parsed
             except Exception as e:
                 _logger.warning(
@@ -62,14 +70,44 @@ class OzonCategory(models.Model):
             raise Warning('Request failed with status code: {}'.format(
                 response.status_code))
 
+    # Method to make any OZON API request
+
+    def ozon_api_request_template(self, url, data):
+        url = url
+        data = data
+        company = self.env.company
+        headers = {
+            'Host': 'api-seller.ozon.ru',
+            'Client-Id': company.client_id_ozon,
+            'Api-Key': company.apikey_ozon,
+            'Content-Type': 'application/json'
+        }
+        data_json = json.dumps(data)
+        response = requests.post(url, headers=headers, data=data_json)
+        if response.status_code == 200:
+            try:
+                res = response.json()
+                return res
+            except Exception as e:
+                _logger.warning(
+                    u'Failed to parse the JSON response: {}'.format(e))
+                return 0
+        else:
+            # Handle the case where the request was not successful (status code is not 200)
+            raise Warning('Request failed with status code: {}'.format(
+                response.status_code))
 
 
-class SomeCategory(models.Model):
-    _description = 'Some tree'
-    _name = 'ozon.category.some'
+    def ozon_get_attributes(self, category_id):
+        url = "https://api-seller.ozon.ru/v3/category/attribute"
+        data = {
+            "attribute_type": "REQUIRED",
+            "category_id": [category_id],
+            "language": "DEFAULT"
+        }
+        res = self.ozon_api_request_template(url, data)
+        # for attr in res["result"][0]["attributes"]:
+        #     print(f'=========={attr}')
 
-    name = fields.Char()
-    title = fields.Char()
-    product_id = fields.Many2one('product.product', string='Product', index=True, ondelete='cascade')
-    category_id = fields.Many2one('ozon.category', string='Category', index=True, ondelete='cascade')
-
+        attributes = res["result"][0]["attributes"]
+        return attributes

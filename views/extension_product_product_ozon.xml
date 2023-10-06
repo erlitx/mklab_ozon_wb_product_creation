@@ -10,21 +10,30 @@
             <page string="Карточка товара Ozon" name="ozon_product">
               <group>
 
-                <button name="ozon_get_category_tree" string="Test" type="object"
+                <button name="ozon_get_attributes" string="Test" type="object"
                   class="oe_highlight" />
               </group>
+              <group>
+                <group name="new_group">
+                  <field name="ozon_category_tree" />
+                  <field name="ozon_attribute_id" />
+                  
+                </group>
+                <field name="ozon_attribute_line"> 
+                  <tree>
+                    <field name="name" />
+                    <field name="value" />
+                  </tree>
+                </field>
+              </group>
 
-              <field name="ozon_category_tree" widget="one2many_list">
-                <tree editable="bottom">
+              <!-- widget="one2many_list"> -->
+              <!-- <tree editable="bottom">
                   <field name="category_id" string="Category ID" invisible="0" />
                   <field name="name" string="Name" invisible="0" />
                   <field name="title" string="Title" invisible="0" />
                   <field name="product_id" string="Category ID" invisible="0" />
-
-                </tree>
-              </field>
-
-
+                </tree> -->
             </page>
           </xpath>
         </data>
@@ -32,4 +41,3 @@
     </record>
   </data>
 </odoo>
-<!-- widget="many2one_barcode" -->
