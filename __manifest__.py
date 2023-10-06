@@ -25,7 +25,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        'views/extension_product_product_ozon.xml',
+        'views/ozon_category.xml',
         'wizard/wizard_product_select.xml',
     ],
     # only loaded in demonstration mode

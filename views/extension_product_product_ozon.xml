@@ -1,0 +1,35 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="mklab_ozonwb_product_creation.ozon_product_template">
+      <field name="name">Template for Ozon Product</field>
+      <field name="model">product.product</field>
+      <field name="inherit_id" ref="product.product_normal_form_view" />
+      <field name="arch" type="xml">
+        <data>
+          <xpath expr="//page[@name='general_information']" position="after">
+            <page string="Карточка товара Ozon" name="ozon_product">
+              <group>
+
+                <button name="ozon_get_category_tree" string="Test" type="object"
+                  class="oe_highlight" />
+              </group>
+
+              <field name="ozon_category_tree" widget="one2many_list">
+                <tree editable="bottom">
+                  <field name="category_id" string="Category ID" invisible="0" />
+                  <field name="name" string="Name" invisible="0" />
+                  <field name="title" string="Title" invisible="0" />
+                  <field name="product_id" string="Category ID" invisible="0" />
+
+                </tree>
+              </field>
+
+
+            </page>
+          </xpath>
+        </data>
+      </field>
+    </record>
+  </data>
+</odoo>
+<!-- widget="many2one_barcode" -->

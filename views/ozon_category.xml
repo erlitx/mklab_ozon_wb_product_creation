@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <record id="action_get_ozon_categories" model="ir.actions.act_window">
+            <field name="name">Ozon Categoty</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ozon.category</field>
+            <field name="domain"></field>
+            <field name="context"></field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_get_product_id_ozon" name="Список категорий OZON"
+            parent="sale.menu_sale_general_settings" action="action_get_ozon_categories"
+            sequence="101" />
+
+        <record id="view_tree_ozon_category" model="ir.ui.view">
+            <field name="name">ozon.category.tree</field>
+            <field name="model">ozon.category</field>
+            <field name="arch" type="xml">
+                <tree string="Ozon Categories">
+                    <field name="category_id" />
+                    <field name="title" />
+                    <field name="product_id" />
+                    <field name="parent_id" />
+                    <field name="child_id" />
+                    <!-- Add any other fields you want to display in the tree view -->
+                </tree>
+            </field>
+        </record>
+
+
+<!-- TEST -->
+
+        <record id="action_get_ozon_categories_test" model="ir.actions.act_window">
+            <field name="name">Ozon Categoty Test</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ozon.category.some</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_get_product_id_ozon_test" name="Список категорий OZON тест"
+            parent="sale.menu_sale_general_settings" action="action_get_ozon_categories_test"
+            sequence="102" />
+
+
+        <record id="TEST_OZON_VIEW" model="ir.ui.view">
+            <field name="name">ozon.test</field>
+            <field name="model">ozon.category.some</field>
+            <field name="arch" type="xml">
+                <tree string="Ozon Categories">
+                    <field name="name" />
+                    <field name="title" />
+                    <field name="product_id" />
+                    <!-- Add any other fields you want to display in the tree view -->
+                </tree>
+            </field>
+        </record>
+<!-- TEST -->
+
+    </data>
+</odoo>

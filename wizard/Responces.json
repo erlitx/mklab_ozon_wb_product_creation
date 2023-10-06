@@ -1,0 +1,861 @@
+{
+    "result": {
+        "items": [
+            {
+                "product_id": 231734359,
+                "offer_id": "AMP-S050",
+                "is_fbo_visible": true,
+                "is_fbs_visible": true,
+                "archived": false,
+                "is_discounted": false
+            },
+            {
+                "product_id": 231744638,
+                "offer_id": "AMP-S051",
+                "is_fbo_visible": true,
+                "is_fbs_visible": true,
+                "archived": false,
+                "is_discounted": false
+            },
+            {
+                "product_id": 231782508,
+                "offer_id": "AMP-S052",
+                "is_fbo_visible": true,
+                "is_fbs_visible": true,
+                "archived": false,
+                "is_discounted": false
+            }
+        ],
+        "total": 47,
+        "last_id": "WyIyMzE3ODI1MDgiLCIyMzE3ODI1MDgiXQ=="
+    }
+}
+
+{
+    "result": {
+        "id": 231734359,
+        "name": "Набор для изучения пайки в стиле киберпанк \"CyberBug\" (электронный жук), DIY паяльный конструктор, 37 точек пайки",
+        "offer_id": "AMP-S050",
+        "barcode": "4602009734106",
+        "buybox_price": "",
+        "category_id": 17035533,
+        "created_at": "2022-02-17T08:46:01.129042Z",
+        "images": [
+            "https://cdn1.ozone.ru/s3/multimedia-z/6258040439.jpg",
+            "https://cdn1.ozone.ru/s3/multimedia-1/6258040441.jpg",
+            "https://cdn1.ozone.ru/s3/multimedia-u/6258040434.jpg",
+            "https://cdn1.ozone.ru/s3/multimedia-r/6258040431.jpg",
+            "https://cdn1.ozone.ru/s3/multimedia-y/6258040438.jpg"
+        ],
+        "marketing_price": "1151.0000",
+        "min_ozon_price": "",
+        "old_price": "1600.0000",
+        "premium_price": "",
+        "price": "1280.0000",
+        "recommended_price": "",
+        "min_price": "1280.0000",
+        "sources": [
+            {
+                "is_enabled": true,
+                "sku": 499585235,
+                "source": "fbo"
+            },
+            {
+                "is_enabled": true,
+                "sku": 499585236,
+                "source": "fbs"
+            }
+        ],
+        "stocks": {
+            "coming": 0,
+            "present": 38,
+            "reserved": 0
+        },
+        "errors": [],
+        "vat": "0.200000",
+        "visible": true,
+        "visibility_details": {
+            "has_price": true,
+            "has_stock": true,
+            "active_product": false
+        },
+        "price_index": "0.00",
+        "commissions": [
+            {
+                "percent": 15,
+                "min_value": 0,
+                "value": 192,
+                "sale_schema": "fbo",
+                "delivery_amount": 0,
+                "return_amount": 0
+            },
+            {
+                "percent": 16,
+                "min_value": 0,
+                "value": 204.8,
+                "sale_schema": "fbs",
+                "delivery_amount": 0,
+                "return_amount": 0
+            },
+            {
+                "percent": 16,
+                "min_value": 0,
+                "value": 204.8,
+                "sale_schema": "rfbs",
+                "delivery_amount": 0,
+                "return_amount": 0
+            }
+        ],
+        "volume_weight": 0.1,
+        "is_prepayment": false,
+        "is_prepayment_allowed": true,
+        "images360": [],
+        "color_image": "",
+        "primary_image": "https://cdn1.ozone.ru/s3/multimedia-w/6258040436.jpg",
+        "status": {
+            "state": "price_sent",
+            "state_failed": "",
+            "moderate_status": "approved",
+            "decline_reasons": [],
+            "validation_state": "success",
+            "state_name": "Продается",
+            "state_description": "",
+            "is_failed": false,
+            "is_created": true,
+            "state_tooltip": "",
+            "item_errors": [],
+            "state_updated_at": "2023-01-23T14:16:52.083505Z"
+        },
+        "state": "",
+        "service_type": "IS_CODE_SERVICE",
+        "fbo_sku": 499585235,
+        "fbs_sku": 499585236,
+        "currency_code": "RUB",
+        "is_kgt": false,
+        "discounted_stocks": {
+            "coming": 0,
+            "present": 0,
+            "reserved": 0
+        },
+        "is_discounted": false,
+        "has_discounted_item": false,
+        "barcodes": [
+            "4602009734106"
+        ],
+        "updated_at": "2023-06-14T10:37:15.825455Z",
+        "price_indexes": {
+            "price_index": "PROFIT",
+            "external_index_data": {
+                "minimal_price": "1296.0000",
+                "minimal_price_currency": "RUB",
+                "price_index_value": 0.99
+            },
+            "ozon_index_data": {
+                "minimal_price": "",
+                "minimal_price_currency": "RUB",
+                "price_index_value": 0
+            },
+            "self_marketplaces_index_data": {
+                "minimal_price": "1296.0000",
+                "minimal_price_currency": "RUB",
+                "price_index_value": 0.99
+            }
+        },
+        "sku": 0,
+        "description_category_id": 17031490
+    }
+}
+
+############# 1
+{
+    "items": [
+        {
+            "attributes": [],
+            "barcode": "",
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Комплект защитных плёнок для X3 NFC. Темный хлопок",
+            "offer_id": "143210608",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+{
+    "result": {
+        "task_id": 837711530
+    }
+}
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "AMP-Test-1",
+                "product_id": 0,
+                "status": "failed",
+                "errors": [
+                    {
+                        "code": "description_category_not_found",
+                        "field": "description_category_id",
+                        "attribute_id": 0,
+                        "state": "new",
+                        "level": "error",
+                        "description": "Некорректная категория товара",
+                        "optional_description_elements": {},
+                        "attribute_name": "",
+                        "message": "Description category ID not found for offer_id AMP-Test-1"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+############# 2
+
+{
+    "items": [
+        {
+            "attributes": [],
+            "barcode": "",
+            "category_id": 17035533,
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Комплект защитных плёнок для X3 NFC. Темный хлопок",
+            "offer_id": "143210608",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+{
+    "result": {
+        "task_id": 837717728
+    }
+}
+
+    
+{
+    "result": {
+        "items": [
+            {
+                "offer_id": "143210608",
+                "product_id": 0,
+                "status": "failed",
+                "errors": [
+                    {
+                        "code": "error_attribute_values_empty",
+                        "field": "",
+                        "attribute_id": 9048,
+                        "state": "new",
+                        "level": "error",
+                        "description": "Не заполнен обязательный атрибут. Иногда мы обновляем обязательные атрибуты или добавляем новые. Отредактируйте товар или загрузите новый XLS-шаблон с актуальными атрибутами. ",
+                        "optional_description_elements": {},
+                        "attribute_name": "Название модели (для объединения в одну карточку)",
+                        "message": "Attribute value empty"
+                    },
+                    {
+                        "code": "error_attribute_values_empty",
+                        "field": "",
+                        "attribute_id": 85,
+                        "state": "new",
+                        "level": "error",
+                        "description": "Не заполнен обязательный атрибут. Иногда мы обновляем обязательные атрибуты или добавляем новые. Отредактируйте товар или загрузите новый XLS-шаблон с актуальными атрибутами. ",
+                        "optional_description_elements": {},
+                        "attribute_name": "Бренд",
+                        "message": "Attribute value empty"
+                    },
+                    {
+                        "code": "error_attribute_values_empty",
+                        "field": "",
+                        "attribute_id": 8229,
+                        "state": "new",
+                        "level": "error",
+                        "description": "Не заполнен обязательный атрибут. Иногда мы обновляем обязательные атрибуты или добавляем новые. Отредактируйте товар или загрузите новый XLS-шаблон с актуальными атрибутами. ",
+                        "optional_description_elements": {},
+                        "attribute_name": "Тип",
+                        "message": "Attribute value empty"
+                    },
+                    {
+                        "code": "INTERNAL",
+                        "field": "",
+                        "attribute_id": 0,
+                        "state": "new",
+                        "level": "internal",
+                        "description": "Техническая ошибка. Попробуйте выполнить запрос позже или обратитесь в Службу поддержки в категорию \"Контент / Работа с карточкой товара\" → \"Создание и редактирование товаров\" https://seller.ozon.ru/main?helpCenter=create-issue.",
+                        "optional_description_elements": {},
+                        "attribute_name": "",
+                        "message": "rpc error: code = InvalidArgument desc = bad request: numeric field overflow"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+###################### 4
+
+
+
+
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "143210608",
+                "product_id": 657915946,
+                "status": "imported",
+                "errors": [
+                    {
+                        "code": "error_attribute_values_empty",
+                        "field": "",
+                        "attribute_id": 8229,
+                        "state": "new",
+                        "level": "error",
+                        "description": "Не заполнен обязательный атрибут. Иногда мы обновляем обязательные атрибуты или добавляем новые. Отредактируйте товар или загрузите новый XLS-шаблон с актуальными атрибутами. ",
+                        "optional_description_elements": {},
+                        "attribute_name": "Тип",
+                        "message": "Attribute value empty"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+########################################
+{
+    "items": [
+        {
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": 85,
+                    "values": [
+                        {
+                            "value": "Нет бренда"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 9048,
+                    "values": [
+                        {
+                            "value": "Тестовый товар"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 8229,
+                    "values": [
+                        {
+                            "dictionary_value_id": 92917,
+                            "value": "Набор для опытов"
+                        }
+                    ]
+                },
+            ],
+            "barcode": "",
+            "category_id": 17035533,
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Тестовый товар наименование",
+            "offer_id": "143210608",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "143210608",
+                "product_id": 657915946,
+                "status": "imported",
+                "errors": [
+                    {
+                        "code": "INTERNAL",
+                        "field": "",
+                        "attribute_id": 0,
+                        "state": "new",
+                        "level": "internal",
+                        "description": "Техническая ошибка. Попробуйте выполнить запрос позже или обратитесь в Службу поддержки в категорию \"Контент / Работа с карточкой товара\" → \"Создание и редактирование товаров\" https://seller.ozon.ru/main?helpCenter=create-issue.",
+                        "optional_description_elements": {},
+                        "attribute_name": "",
+                        "message": "rpc error: code = InvalidArgument desc = bad request: numeric field overflow"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "143210608",
+                "product_id": 657915946,
+                "status": "imported",
+                "errors": [
+                    {
+                        "code": "error_attribute_values_out_of_range",
+                        "field": "",
+                        "attribute_id": 8229,
+                        "state": "new",
+                        "level": "error",
+                        "description": "Неверное значение из списка для атрибута. Для некоторых атрибутов все возможные значения собраны в виде списка — указывайте только их, прописывать значения вручную не нужно. Выберите значения атрибута из списка или загрузите новый XLS-шаблон со значением из списка.",
+                        "optional_description_elements": {},
+                        "attribute_name": "Тип",
+                        "message": "Attribute value not fresh"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+
+
+
+#####################################
+
+{
+    "items": [
+        {
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": 85,
+                    "values": [
+                        {
+                            "value": "Нет бренда"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 9048,
+                    "values": [
+                        {
+                            "value": "Тестовый товар"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 8229,
+                    "values": [
+                        {
+                            "dictionary_value_id": 92917,
+                        }
+                    ]
+                },
+            ],
+            "barcode": "",
+            "category_id": 17035533,
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Тестовый товар наименование",
+            "offer_id": "143210608",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "143210608",
+                "product_id": 657915946,
+                "status": "imported",
+                "errors": [
+                    {
+                        "code": "INTERNAL",
+                        "field": "",
+                        "attribute_id": 0,
+                        "state": "new",
+                        "level": "internal",
+                        "description": "Техническая ошибка. Попробуйте выполнить запрос позже или обратитесь в Службу поддержки в категорию \"Контент / Работа с карточкой товара\" → \"Создание и редактирование товаров\" https://seller.ozon.ru/main?helpCenter=create-issue.",
+                        "optional_description_elements": {},
+                        "attribute_name": "",
+                        "message": "rpc error: code = InvalidArgument desc = bad request: numeric field overflow"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "143210608",
+                "product_id": 657915946,
+                "status": "imported",
+                "errors": [
+                    {
+                        "code": "INTERNAL",
+                        "field": "",
+                        "attribute_id": 0,
+                        "state": "new",
+                        "level": "internal",
+                        "description": "Техническая ошибка. Попробуйте выполнить запрос позже или обратитесь в Службу поддержки в категорию \"Контент / Работа с карточкой товара\" → \"Создание и редактирование товаров\" https://seller.ozon.ru/main?helpCenter=create-issue.",
+                        "optional_description_elements": {},
+                        "attribute_name": "",
+                        "message": "rpc error: code = InvalidArgument desc = bad request: numeric field overflow"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+####################SUCCESS#################
+data = {
+    "items": [
+        {
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": 85,
+                    "values": [
+                        {
+                            "value": "Нет бренда"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 9048,
+                    "values": [
+                        {
+                            "value": "Тестовый товар"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 8229,
+                    "values": [
+                        {
+                            "dictionary_value_id": 971295212,
+                            "value": "Мультстудия"
+                        }
+                    ]
+                },
+            ],
+            "barcode": "112772873170",
+            "category_id": 17035533,
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Тестовый товар наименование",
+            "offer_id": "143210608",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "0.20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "143210608",
+                "product_id": 657915946,
+                "status": "imported",
+                "errors": []
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+####################SUCCESS#################
+
+data = {
+    "items": [
+        {
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": 85,
+                    "values": [
+                        {
+                            "value": "Нет бренда"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 9048,
+                    "values": [
+                        {
+                            "value": "Тестовый товар"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 8229,
+                    "values": [
+                        {
+                            "dictionary_value_id": 971295212,
+                            "value": "Мультстудия"
+                        }
+                    ]
+                },
+            ],
+            "barcode": "",
+            "category_id": 17035533,
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Тестовый товар 2",
+            "offer_id": "AMP-TEST-1",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "0.20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "AMP-TEST-1",
+                "product_id": 658190388,
+                "status": "imported",
+                "errors": []
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+#########################################
+
+data = {
+    "items": [
+        {
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": 85,
+                    "values": [
+                        {
+                            "value": "Нет бренда"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 9048,
+                    "values": [
+                        {
+                            "value": "Тестовый товар"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 8229,
+                    "values": [
+                        {
+                            "dictionary_value_id": 8229,
+                            "value": "Набор для опытов"
+                        }
+                    ]
+                },
+            ],
+            "barcode": "",
+            "category_id": 17035533,
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Тестовый товар 3",
+            "offer_id": "AMP-TEST-3",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "0.20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "AMP-TEST-3",
+                "product_id": 658209409,
+                "status": "imported",
+                "errors": [
+                    {
+                        "code": "error_attribute_values_out_of_range",
+                        "field": "",
+                        "attribute_id": 8229,
+                        "state": "new",
+                        "level": "error",
+                        "description": "Неверное значение из списка для атрибута. Для некоторых атрибутов все возможные значения собраны в виде списка — указывайте только их, прописывать значения вручную не нужно. Выберите значения атрибута из списка или загрузите новый XLS-шаблон со значением из списка.",
+                        "optional_description_elements": {},
+                        "attribute_name": "Тип",
+                        "message": "Attribute value not fresh"
+                    }
+                ]
+            }
+        ],
+        "total": 1
+    }
+}
+
+
+
+#########################################
+data = {
+    "items": [
+        {
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": 85,
+                    "values": [
+                        {
+                            "value": "Нет бренда"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 9048,
+                    "values": [
+                        {
+                            "value": "Тестовый товар"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": 8229,
+                    "values": [
+                        {
+                            "dictionary_value_id": 92917,
+                            "value": "Набор для опытов"
+                        }
+                    ]
+                },
+            ],
+            "barcode": "",
+            "category_id": 17035533,
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": 10,
+            "dimension_unit": "mm",
+            "height": 250,
+            "images": [],
+            "name": "Тестовый товар 3",
+            "offer_id": "AMP-TEST-3",
+            "price": "1000",
+            "primary_image": "",
+            "vat": "0.20",
+            "weight": 100,
+            "weight_unit": "g",
+            "width": 150
+        }
+    ]
+}
+
+***********Response Content: {
+    "result": {
+        "items": [
+            {
+                "offer_id": "AMP-TEST-3",
+                "product_id": 658209409,
+                "status": "imported",
+                "errors": []
+            }
+        ],
+        "total": 1
+    }
+}
