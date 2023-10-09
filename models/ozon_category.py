@@ -106,8 +106,8 @@ class OzonCategory(models.Model):
             "language": "DEFAULT"
         }
         res = self.ozon_api_request_template(url, data)
-        # for attr in res["result"][0]["attributes"]:
-        #     print(f'=========={attr}')
+        for attr in res["result"][0]["attributes"]:
+            print(f'=========={attr}')
 
         attributes = res["result"][0]["attributes"]
         return attributes

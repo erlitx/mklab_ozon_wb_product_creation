@@ -1,7 +1,7 @@
 <odoo>
     <data>
 
-<!-- ozon.category -->
+        <!-- ozon.category -->
 
         <!-- Action for tree view -->
         <record id="action_get_ozon_categories" model="ir.actions.act_window">
@@ -24,6 +24,7 @@
             <field name="model">ozon.category</field>
             <field name="arch" type="xml">
                 <tree string="Ozon Categories">
+                    <field name="id" />
                     <field name="category_id" />
                     <field name="title" />
                     <field name="product_id" />
@@ -34,7 +35,7 @@
         </record>
 
 
-<!-- ozon.attribute.values -->
+        <!-- ozon.attribute -->
 
         <!-- Action for tree view -->
         <record id="action_ozon_attributes" model="ir.actions.act_window">
@@ -61,10 +62,65 @@
                     <field name="title" />
                     <field name="attribute_id" />
                     <field name="description" />
-                    <field name="attribute_type" />
+                    <field name="type" />
                     <field name="is_required" />
                     <field name="dictionary_id" />
+                    <field name="category_id" />
 
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="ozon_attributes_form_view" model="ir.ui.view">
+            <field name="name">Ozon Attribute Values Tree View</field>
+            <field name="model">ozon.attribute</field>
+            <field name="arch" type="xml">
+                <form string="Ozon Categories">
+                    <group>
+                    <field name="name" />
+                    <field name="title" />
+                    <field name="attribute_id" />
+                    <field name="description" />
+                    <field name="type" />
+                    <field name="is_required" />
+                    <field name="dictionary_id" />
+                    <field name="category_id" />
+                    <field name="product_many_ids" widget="many2many_checkboxes" />
+                </group>
+
+                </form>
+            </field>
+        </record>
+
+
+
+        <!-- ozon.attribute.values -->
+
+        <!-- Action for tree view -->
+        <record id="action_ozon_attribute_value" model="ir.actions.act_window">
+            <field name="name">Ozon Attribute Value</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ozon.attribute.value</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Menu item -->
+        <menuitem id="menu_get_product_id_ozon_attribute_value" name="Ozon Attribute Value"
+            parent="sale.menu_sale_general_settings" action="action_ozon_attribute_value"
+            sequence="103" />
+
+
+        <!-- Tree View  -->
+        <record id="ozon_attributes_value_tree_view" model="ir.ui.view">
+            <field name="name">Ozon Attribute Values Tree View</field>
+            <field name="model">ozon.attribute.value</field>
+            <field name="arch" type="xml">
+                <tree string="Ozon Categories">
+                    <field name="name" />
+                    <field name="value" />
+                    <field name="attribute_id" />
                 </tree>
             </field>
         </record>

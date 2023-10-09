@@ -16,14 +16,37 @@
               <group>
                 <group name="new_group">
                   <field name="ozon_category_tree" />
-                  <field name="ozon_attribute_id" />
+                  <!-- <field name="ozon_attribute_id" /> -->
                   
                 </group>
                 <field name="ozon_attribute_line"> 
                   <tree>
+                    <field name="attribute_id" />
                     <field name="name" />
-                    <field name="value" />
+                    <field name="type" />
+                    <field name="is_required" />
+                    <field name="dictionary_id" />
+                    <field name="value_ids" />
                   </tree>
+                  <form>
+                    <group>
+                    <field name="attribute_id" />
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="is_required" />
+                    <field name="dictionary_id" />
+                    <field name="value_ids"/>
+                    <field name="category_id"/>
+                    <field name="id"/>
+                    <field name="product_id"/>
+                    <group>
+                      <field name="product_many_ids" widget="many2many_tags" />
+                    </group>
+
+
+
+                    </group>
+                  </form>
                 </field>
               </group>
 
