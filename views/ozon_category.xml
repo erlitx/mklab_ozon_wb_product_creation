@@ -39,7 +39,7 @@
 
         <!-- Action for tree view -->
         <record id="action_ozon_attributes" model="ir.actions.act_window">
-            <field name="name">Ozon Attribute Values</field>
+            <field name="name">Ozon Attribute </field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">ozon.attribute</field>
             <field name="view_mode">tree,form</field>
@@ -58,6 +58,7 @@
             <field name="model">ozon.attribute</field>
             <field name="arch" type="xml">
                 <tree string="Ozon Categories">
+                    <field name="id" />
                     <field name="name" />
                     <field name="title" />
                     <field name="attribute_id" />
@@ -66,6 +67,7 @@
                     <field name="is_required" />
                     <field name="dictionary_id" />
                     <field name="category_id" />
+                    <field name="value_ids" />
 
                 </tree>
             </field>
@@ -78,6 +80,7 @@
             <field name="arch" type="xml">
                 <form string="Ozon Categories">
                     <group>
+                    <field name="id" />
                     <field name="name" />
                     <field name="title" />
                     <field name="attribute_id" />
@@ -86,7 +89,11 @@
                     <field name="is_required" />
                     <field name="dictionary_id" />
                     <field name="category_id" />
-                    <field name="product_many_ids" widget="many2many_checkboxes" />
+                    <field name="product_many_ids" widget="many2many_tags" />
+                    <field name="value_ids"/>
+                </group>
+                <group>
+                    <field name="product_id"/>
                 </group>
 
                 </form>

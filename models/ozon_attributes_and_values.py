@@ -31,8 +31,10 @@ class OzonAttributes(models.Model):
             string='Product IDs',  # Label for the field in forms and views
             help='Help text for the field',  # Help text displayed with the field
             )
-    value_ids = fields.Many2one('ozon.attribute.value', string='Attribute Values')
-    #value_ids = fields.Many2one('ozon.attribute.value', string='Attribute Values', domain="[('attribute_id', '=', id)]")
+
+    value_ids = fields.Many2one('ozon.attribute.value', string='Value_ids',
+                                domain="[('attribute_id', 'in', id)]")
+    #value_ids = fields.One2many('ozon.attribute.value', 'attribute_id', string='Attribute Values',)
 
 
     @api.onchange('category_id')
@@ -50,12 +52,28 @@ class OzonAttributes(models.Model):
         #     self.value_ids = [(4, value.id) for value in category_values]
 
     def write(self, vals):
-        super().write(vals)
-        print(f'***********Write: {vals}')
+      #  print(f'***********Write1: {vals}')
+        new_rec = super().write(vals)
+       # print(f'***********Write2: {vals}')
 
     def create(self, vals):
-        super().create(vals)
-        print(f'***********Create: {vals}')
+    #    print(f'***********Create1: {vals}')
+        # for val in vals:
+        #     val['product_many_ids'] = [(6, 0, [18])]
+        #print(f'***********Create2: {vals}')
+        try:
+            new_rec = super().create(vals)
+           # print(f'***********Create2: {vals}')
+           # print(f'***********NEW REC: {new_rec}')
+            return new_rec
+        except Exception as e:
+            print(f'***********Create3: {vals}')
+    
+    def unlink(self):
+        print(f'***********Unlink1: {self}')
+        res = super().unlink()
+        print(f'***********Unlink2: {self}')
+        return res
 
 
 class OzonAttributesValues(models.Model):
@@ -67,8 +85,21 @@ class OzonAttributesValues(models.Model):
     value = fields.Char(string="Value")
     info = fields.Char(string="Info")
     picture = fields.Char(string="Picture")
-    attribute_id = fields.Many2one('ozon.attribute', string='Attributes Values', index=True)
+    #attribute_id = fields.Many2one('ozon.attribute', string='Attributes Values', index=True)
+    attribute_id = fields.Many2many('ozon.attribute', string='Attributes Values', index=True)
+    #attribute_id = fields.One2many('ozon.attribute', 'value_ids', string='Attributes Values', index=True)
     #product_id = fields.Many2one('product.product', string='Product', index=True, ondelete='cascade')
 
 
-
+    def create(self, vals):
+        print(f'***********Create1(values): {vals}')
+        # for val in vals:
+        #     val['product_many_ids'] = [(6, 0, [18])]
+        #print(f'***********Create2: {vals}')
+        try:
+            new_rec = super().create(vals)
+           # print(f'***********Create2: {vals}')
+           # print(f'***********NEW REC: {new_rec}')
+            return new_rec
+        except Exception as e:
+            print(f'***********Create3: {vals}')

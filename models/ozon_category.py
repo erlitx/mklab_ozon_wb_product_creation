@@ -13,7 +13,8 @@ class OzonCategory(models.Model):
     category_id = fields.Char()
     name = fields.Char(string='Name', compute="_get_name", stored=True, index=True)
     title = fields.Char()
-    product_id = fields.Many2one('product.product', string='Product', index=True, ondelete='cascade')
+    #product_id = fields.Many2one('product.product', string='Product', index=True, ondelete='cascade')
+    product_id = fields.Many2many('product.product', string='Product', index=True, ondelete='cascade')
     parent_id = fields.Many2one('ozon.category', string='Parent Category', index=True, ondelete='cascade')
     child_id = fields.One2many('ozon.category', 'parent_id', string='Child Categories')
 
@@ -25,6 +26,7 @@ class OzonCategory(models.Model):
             record.name = display_name
 
 
+    # A recursion method to get and save all the categories from the Ozon API
     def category_tree_recursion_create(self, json_data, parent_id=None):
         for item in json_data:
             values = {
@@ -83,6 +85,7 @@ class OzonCategory(models.Model):
             'Content-Type': 'application/json'
         }
         data_json = json.dumps(data)
+        #print(f'***********data_json: {data_json}')
         response = requests.post(url, headers=headers, data=data_json)
         if response.status_code == 200:
             try:
@@ -111,3 +114,16 @@ class OzonCategory(models.Model):
 
         attributes = res["result"][0]["attributes"]
         return attributes
+
+
+    def ozon_get_attributes_value(self, category_id, attribute_id):
+        url = "https://api-seller.ozon.ru/v2/category/attribute/values"
+        data = {
+                "attribute_id": attribute_id,
+                "category_id": int(category_id),
+                "language": "DEFAULT",
+                "last_value_id": 0,
+                "limit": 100
+        }
+        res = self.ozon_api_request_template(url, data)
+        return res["result"]

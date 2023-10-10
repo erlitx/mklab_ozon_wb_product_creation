@@ -20,7 +20,8 @@
                   
                 </group>
                 <field name="ozon_attribute_line"> 
-                  <tree>
+                  <tree editable="top">
+                    <field name="id" />
                     <field name="attribute_id" />
                     <field name="name" />
                     <field name="type" />
