@@ -125,6 +125,7 @@
             <field name="model">ozon.attribute.value</field>
             <field name="arch" type="xml">
                 <tree string="Ozon Categories">
+                    <field name="ozon_value_id" string="Ozon Value ID"/>
                     <field name="name" />
                     <field name="value" />
                     <field name="attribute_id" />

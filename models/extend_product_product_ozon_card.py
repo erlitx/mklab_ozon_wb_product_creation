@@ -118,7 +118,8 @@ class ProductOzonTemplate(models.Model):
 
                         self.env['ozon.attribute.value'].create(
                             {'attribute_id': [attribute_line.id], 
-                            'name': value['value'],}
+                            'name': value['value'],
+                            'ozon_value_id': value['id'],}
                             )
             #{'id': 5055881, 'value': 'Sunshine', 'info': '', 
             # 'picture': 'https://cdn1.ozone.ru/s3/multimedia-i/6010930878.jpg'},

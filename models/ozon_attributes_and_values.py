@@ -80,6 +80,7 @@ class OzonAttributesValues(models.Model):
     _description = 'Some tree'
     _name = 'ozon.attribute.value'
 
+    ozon_value_id = fields.Char(String="Ozon Value ID")
     name = fields.Char()
     title = fields.Char()
     value = fields.Char(string="Value")

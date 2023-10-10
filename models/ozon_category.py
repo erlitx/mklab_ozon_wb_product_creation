@@ -42,6 +42,35 @@ class OzonCategory(models.Model):
                     item['children'], category.id)
 
 
+    # Template method to make any OZON API request
+    def ozon_api_request_template(self, url, data):
+        url = url
+        data = data
+        company = self.env.company
+        headers = {
+            'Host': 'api-seller.ozon.ru',
+            'Client-Id': company.client_id_ozon,
+            'Api-Key': company.apikey_ozon,
+            'Content-Type': 'application/json'
+        }
+        data_json = json.dumps(data)
+        #print(f'***********data_json: {data_json}')
+        response = requests.post(url, headers=headers, data=data_json)
+        if response.status_code == 200:
+            try:
+                res = response.json()
+                return res
+            except Exception as e:
+                _logger.warning(
+                    u'Failed to parse the JSON response: {}'.format(e))
+                return 0
+        else:
+            # Handle the case where the request was not successful (status code is not 200)
+            raise Warning('Request failed with status code: {}'.format(
+                response.status_code))
+
+
+    # Get the CATEGORIES from the Ozon API
     def get_ozon_catalog_tree(self):
         url = "https://api-seller.ozon.ru/v2/category/tree"
         data = {"language": "DEFAULT"}
@@ -72,35 +101,8 @@ class OzonCategory(models.Model):
             raise Warning('Request failed with status code: {}'.format(
                 response.status_code))
 
-    # Method to make any OZON API request
 
-    def ozon_api_request_template(self, url, data):
-        url = url
-        data = data
-        company = self.env.company
-        headers = {
-            'Host': 'api-seller.ozon.ru',
-            'Client-Id': company.client_id_ozon,
-            'Api-Key': company.apikey_ozon,
-            'Content-Type': 'application/json'
-        }
-        data_json = json.dumps(data)
-        #print(f'***********data_json: {data_json}')
-        response = requests.post(url, headers=headers, data=data_json)
-        if response.status_code == 200:
-            try:
-                res = response.json()
-                return res
-            except Exception as e:
-                _logger.warning(
-                    u'Failed to parse the JSON response: {}'.format(e))
-                return 0
-        else:
-            # Handle the case where the request was not successful (status code is not 200)
-            raise Warning('Request failed with status code: {}'.format(
-                response.status_code))
-
-
+    # Get the ATTRIBUTES from the Ozon API
     def ozon_get_attributes(self, category_id):
         url = "https://api-seller.ozon.ru/v3/category/attribute"
         data = {
@@ -116,6 +118,7 @@ class OzonCategory(models.Model):
         return attributes
 
 
+    # Get the ATTRIBUTE VALUES from the Ozon API
     def ozon_get_attributes_value(self, category_id, attribute_id):
         url = "https://api-seller.ozon.ru/v2/category/attribute/values"
         data = {
@@ -126,4 +129,7 @@ class OzonCategory(models.Model):
                 "limit": 100
         }
         res = self.ozon_api_request_template(url, data)
+        if attribute_id == 85:
+            print(f'=====LENGHT====={len(res["result"])}')
+
         return res["result"]
