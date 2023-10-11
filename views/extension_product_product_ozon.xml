@@ -10,10 +10,13 @@
             <page string="Карточка товара Ozon" name="ozon_product">
 
 
-              <div style="display: flex; align-items: left; justify-content: space-between; margin-bottom: 10px;">
+              <div
+                style="display: flex; align-items: left; justify-content: space-between; margin-bottom: 10px;">
                 <button name="fill_the_fields" string="Заполнить поля" type="object"
                   class="oe_highlight" style="height: 30px;" />
-                <button name="ozon_get_attributes" string="Загрузить товар в Ozon" type="object"
+                <button name="upload_product_to_ozon" string="Загрузить товар в Ozon" type="object"
+                  class="oe_highlight" style="height: 30px; margin-left: 10px;" />
+                <button name="get_task_info" string="Проверить статус последней загрузки" type="object"
                   class="oe_highlight" style="height: 30px; margin-left: 10px;" />
               </div>
 
@@ -49,11 +52,11 @@
                 <field name="ozon_attribute_line">
                   <tree editable="top">
                     <field name="id" invisible="1" />
-                    <field name="attribute_id" readonly="1" invisible="1" />
+                    <field name="attribute_id" readonly="1" invisible="0" />
                     <field name="name" readonly="1" />
                     <field name="description" readonly="1" />
                     <field name="is_required" readonly="1" invisible="1" />
-                    <field name="dictionary_id" readonly="1" invisible="1" />
+                    <field name="dictionary_id" readonly="1" invisible="0" />
                     <field name="value_ids" />
                   </tree>
                   <form>

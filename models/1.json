@@ -1,0 +1,1212 @@
+***********data: {
+    "items": [
+        {
+            "barcode": "some",
+            "category_id": "50766537",
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": "200",
+            "dimension_unit": "mm",
+            "height": "200",
+            "images": [
+                "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+                "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+            ],
+            "name": "Customizable Desk",
+            "offer_id": "DESK0005",
+            "price": "750.0",
+            "primary_image": "",
+            "vat": "0.2",
+            "weight": "100",
+            "weight_unit": "g",
+            "width": "200",
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": "85",
+                    "values": [
+                        {
+                            "dictionary_value_id": "28732849",
+                            "value": false
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "8229",
+                    "values": [
+                        {
+                            "dictionary_value_id": "1960",
+                            "value": "\u0410\u043a\u0441\u0435\u0441\u0441\u0443\u0430\u0440 \u0434\u043b\u044f \u043c\u0443\u0440\u0430\u0432\u044c\u0438\u043d\u043e\u0439 \u0444\u0435\u0440\u043c\u044b"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "9048",
+                    "values": [
+                        {
+                            "dictionary_value_id": "0",
+                            "value": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+***********data: {
+    "items": [
+        {
+            "barcode": "some",
+            "category_id": "50766537",
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": "200",
+            "dimension_unit": "mm",
+            "height": "200",
+            "images": [
+                "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+                "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+            ],
+            "name": "Customizable Desk",
+            "offer_id": "DESK0005",
+            "price": "750.0",
+            "primary_image": "",
+            "vat": "0.2",
+            "weight": "100",
+            "weight_unit": "g",
+            "width": "200",
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": "85",
+                    "values": [
+                        {
+                            "dictionary_value_id": "28732849",
+                            "value": "Kitfort"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "8229",
+                    "values": [
+                        {
+                            "dictionary_value_id": "1960",
+                            "value": "\u0410\u043a\u0441\u0435\u0441\u0441\u0443\u0430\u0440 \u0434\u043b\u044f \u043c\u0443\u0440\u0430\u0432\u044c\u0438\u043d\u043e\u0439 \u0444\u0435\u0440\u043c\u044b"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "9048",
+                    "values": [
+                        {
+                            "dictionary_value_id": "0",
+                            "value": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+--------
+*****data: {
+    "items": [
+        {
+            "barcode": "some",
+            "category_id": "50766537",
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": "200",
+            "dimension_unit": "mm",
+            "height": "200",
+            "images": [
+                "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+                "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+            ],
+            "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440",
+            "offer_id": "DESK0005",
+            "price": "750.0",
+            "primary_image": "",
+            "vat": "0.2",
+            "weight": "100",
+            "weight_unit": "g",
+            "width": "200",
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": "85",
+                    "values": [
+                        {
+                            "dictionary_value_id": "28732849",
+                            "value": "Ica"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "8229",
+                    "values": [
+                        {
+                            "dictionary_value_id": "1960",
+                            "value": "\u041c\u0443\u0440\u0430\u0432\u044c\u0438\u043d\u0430\u044f \u0444\u0435\u0440\u043c\u0430"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "9048",
+                    "values": [
+                        {
+                            "dictionary_value_id": "0",
+                            "value": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+{
+    "items": [
+        {
+            "offer_id": "DESK0005",
+            "product_id": 0,
+            "status": "pending",
+            "errors": [
+                {
+                    "code": "error_attribute_values_out_of_range",
+                    "field": "",
+                    "attribute_id": 8229,
+                    "state": "new",
+                    "level": "error",
+                    "description": "Неверное значение из списка для атрибута. Для некоторых атрибутов все возможные значения собраны в виде списка — указывайте только их, прописывать значения вручную не нужно. Выберите значения атрибута из списка или загрузите новый XLS-шаблон со значением из списка.",
+                    "optional_description_elements": {},
+                    "attribute_name": "Тип",
+                    "message": "Attribute value not fresh"
+                },
+                {
+                    "code": "error_attribute_values_out_of_range",
+                    "field": "",
+                    "attribute_id": 85,
+                    "state": "new",
+                    "level": "error",
+                    "description": "Неверное значение из списка для атрибута. Для некоторых атрибутов все возможные значения собраны в виде списка — указывайте только их, прописывать значения вручную не нужно. Выберите значения атрибута из списка или загрузите новый XLS-шаблон со значением из списка.",
+                    "optional_description_elements": {},
+                    "attribute_name": "Бренд",
+                    "message": "Attribute value not fresh"
+                }
+            ]
+        }
+    ],
+    "total": 1
+}
+
+
+
+============
+
+data: {
+    "items": [
+        {
+            "barcode": "some",
+            "category_id": "17035533",
+            "complex_attributes": [],
+            "currency_code": "RUB",
+            "depth": "200",
+            "dimension_unit": "mm",
+            "height": "200",
+            "images": [
+                "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+                "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+            ],
+            "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440",
+            "offer_id": "DESK0005",
+            "price": "750.0",
+            "primary_image": "",
+            "vat": "0.2",
+            "weight": "100",
+            "weight_unit": "g",
+            "width": "200",
+            "attributes": [
+                {
+                    "complex_id": 0,
+                    "id": "85",
+                    "values": [
+                        {
+                            "dictionary_value_id": false,
+                            "value": "\u041d\u0435\u0442 \u0431\u0440\u0435\u043d\u0434\u0430"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "8229",
+                    "values": [
+                        {
+                            "dictionary_value_id": "92917",
+                            "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                        }
+                    ]
+                },
+                {
+                    "complex_id": 0,
+                    "id": "9048",
+                    "values": [
+                        {
+                            "dictionary_value_id": false,
+                            "value": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+"items": [
+    {
+        "barcode": "some",
+        "category_id": "17035533",
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": "200",
+        "dimension_unit": "mm",
+        "height": "200",
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": "100",
+        "weight_unit": "g",
+        "width": "200",
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": "85",
+                "values": [
+                    {
+                        "value": "\u041d\u0435\u0442 \u0431\u0440\u0435\u043d\u0434\u0430"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "8229",
+                "values": [
+                    {
+                        "dictionary_value_id": "92917",
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "9048",
+                "values": [
+                    {
+                        "value": "Название"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+
+----------OK--------
+data = {
+"items": [
+    {
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "value": "Нет бренда"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "Тестовый товар"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "Набор для опытов"
+                    }
+                ]
+            },
+        ],
+        "barcode": "",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 10,
+        "dimension_unit": "mm",
+        "height": 250,
+        "images": [],
+        "name": "Тестовый товар 3",
+        "offer_id": "AMP-TEST-4",
+        "price": "1000",
+        "primary_image": "",
+        "vat": "0.20",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 150
+    }
+]
+}
+
+------ NOT OK ------------
+data: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": "17035533",
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": "200",
+        "dimension_unit": "mm",
+        "height": "200",
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": "100",
+        "weight_unit": "g",
+        "width": "200",
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": "85",
+                "values": [
+                    {
+                        "dictionary_value_id": "5058867",
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "8229",
+                "values": [
+                    {
+                        "dictionary_value_id": "92917",
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "9048",
+                "values": [
+                    {
+                        "dictionary_value_id": false,
+                        "value": false
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+
+
+-----------OK-----------
+data = {
+"items": [
+    {
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": "5058867",
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "Тестовый товар2"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "Набор для опытов"
+                    }
+                ]
+            },
+        ],
+        "barcode": "",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 10,
+        "dimension_unit": "mm",
+        "height": 250,
+        "images": [],
+        "name": "Тестовый товар 3",
+        "offer_id": "AMP-TEST-5",
+        "price": "1000",
+        "primary_image": "",
+        "vat": "0.20",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 150
+    }
+]
+}
+
+
+-----------OK-----------
+data_json: {
+"items": [
+    {
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": "5058867",
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04402"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            }
+        ],
+        "barcode": "",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 10,
+        "dimension_unit": "mm",
+        "height": 250,
+        "images": [],
+        "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u0440 3",
+        "offer_id": "AMP-TEST-7",
+        "price": "1000",
+        "primary_image": "",
+        "vat": "0.20",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 150
+    }
+]
+}
+
+
+------NOT OK --------
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": "17035533",
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": "200",
+        "dimension_unit": "mm",
+        "height": "200",
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": "100",
+        "weight_unit": "g",
+        "width": "200",
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": "85",
+                "values": [
+                    {
+                        "dictionary_value_id": "5058867",
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "8229",
+                "values": [
+                    {
+                        "dictionary_value_id": "92917",
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "9048",
+                "values": [
+                    {
+                        "value": "\u0415\u0449\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+{
+"items": [
+    {
+        "offer_id": "DESK0005",
+        "product_id": 669054444,
+        "status": "imported",
+        "errors": [
+            {
+                "code": "error_attribute_values_out_of_range",
+                "field": "",
+                "attribute_id": 8229,
+                "state": "new",
+                "level": "error",
+                "description": "Неверное значение из списка для атрибута. Для некоторых атрибутов все возможные значения собраны в виде списка — указывайте только их, прописывать значения вручную не нужно. Выберите значения атрибута из списка или загрузите новый XLS-шаблон со значением из списка.",
+                "optional_description_elements": {},
+                "attribute_name": "Тип",
+                "message": "Attribute value not fresh"
+            }
+        ]
+    }
+],
+"total": 1
+}
+
+-----NOT OK----
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": "17035533",
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": "200",
+        "dimension_unit": "mm",
+        "height": "200",
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": "100",
+        "weight_unit": "g",
+        "width": "200",
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": "85",
+                "values": [
+                    {
+                        "dictionary_value_id": 5058867,
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "8229",
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": "9048",
+                "values": [
+                    {
+                        "value": "\u0415\u0449\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+{
+"items": [
+    {
+        "offer_id": "DESK0005",
+        "product_id": 669054444,
+        "status": "imported",
+        "errors": [
+            {
+                "code": "error_attribute_values_out_of_range",
+                "field": "",
+                "attribute_id": 8229,
+                "state": "new",
+                "level": "error",
+                "description": "Неверное значение из списка для атрибута. Для некоторых атрибутов все возможные значения собраны в виде списка — указывайте только их, прописывать значения вручную не нужно. Выберите значения атрибута из списка или загрузите новый XLS-шаблон со значением из списка.",
+                "optional_description_elements": {},
+                "attribute_name": "Тип",
+                "message": "Attribute value not fresh"
+            }
+        ]
+    }
+],
+"total": 1
+}
+
+
+-----NOT OK-----
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 200,
+        "dimension_unit": "mm",
+        "height": 200,
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u04402",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 200,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": 5058867,
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0415\u0449\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+{
+"result": {
+    "items": [
+        {
+            "offer_id": "DESK0005",
+            "product_id": 669054444,
+            "status": "imported",
+            "errors": [
+                {
+                    "code": "error_attribute_values_out_of_range",
+                    "field": "",
+                    "attribute_id": 8229,
+                    "state": "new",
+                    "level": "error",
+                    "description": "Неверное значение из списка для атрибута. Для некоторых атрибутов все возможные значения собраны в виде списка — указывайте только их, прописывать значения вручную не нужно. Выберите значения атрибута из списка или загрузите новый XLS-шаблон со значением из списка.",
+                    "optional_description_elements": {},
+                    "attribute_name": "Тип",
+                    "message": "Attribute value not fresh"
+                }
+            ]
+        }
+    ],
+    "total": 1
+}
+}
+
+
+-----OK -----
+data_json: {
+"items": [
+    {
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": "5058867",
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04402"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            }
+        ],
+        "barcode": "",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 10,
+        "dimension_unit": "mm",
+        "height": 250,
+        "images": [],
+        "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u0440 3",
+        "offer_id": "AMP-TEST-7",
+        "price": "1000",
+        "primary_image": "",
+        "vat": "0.20",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 150
+    }
+]
+}
+
+------OK-----
+data_json: {
+"items": [
+    {
+        "barcode": "",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 10,
+        "dimension_unit": "mm",
+        "height": 250,
+        "images": [],
+        "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u0440 3",
+        "offer_id": "AMP-TEST-7",
+        "price": "1000",
+        "primary_image": "",
+        "vat": "0.20",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 150,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": "5058867",
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04402"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+
+---TRY---
+
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 200,
+        "dimension_unit": "mm",
+        "height": 200,
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u04402",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 200,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": 5058867,
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04402"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+
+----OK----
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 200,
+        "dimension_unit": "mm",
+        "height": 200,
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u04402",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 200,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": 5058867,
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04402"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+----TRY---
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 200,
+        "dimension_unit": "mm",
+        "height": 200,
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u04402",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 200,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": 5058867,
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04402"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+-----OK send by Odoo----
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 200,
+        "dimension_unit": "mm",
+        "height": 200,
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u04402",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 200,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": 5058867,
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04402"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}
+
+
+----TRY Send by odoo ---
+data_json: {
+"items": [
+    {
+        "barcode": "some",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 200,
+        "dimension_unit": "mm",
+        "height": 200,
+        "images": [
+            "https://static.insales-cdn.com/images/products/1/5209/406565977/matryoshka-z-iskra-uno.1.jpg",
+            "https://static.insales-cdn.com/images/products/1/5210/406565978/matryoshka-z-iskra-uno.2.jpg"
+        ],
+        "name": "\u041d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u04402",
+        "offer_id": "DESK0005",
+        "price": "750.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": 100,
+        "weight_unit": "g",
+        "width": 200,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": 5058867,
+                        "value": "LEGO"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0442\u043e\u0432\u0430\u04403"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}

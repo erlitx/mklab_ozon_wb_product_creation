@@ -1,5 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError
+from . import ozon_api
+import json
 
 
 
@@ -23,7 +25,7 @@ class ProductOzonTemplate(models.Model):
     ozon_price = fields.Char(string='Цена на Ozon')
     ozon_price_currency = fields.Char(string='Валюта', default='RUB')
     ozon_primary_image = fields.Char(string='Основное изображение')
-    ozon_images = fields.Char(string='Дополнительные изображения')
+    ozon_images = fields.Text(string='Дополнительные изображения')
     ozon_dimension_units = fields.Char(string='Единицы измерения', default='mm')
     ozon_height = fields.Char(string='Высота в мм')
     ozon_width = fields.Char(string='Ширина в мм')
@@ -31,7 +33,7 @@ class ProductOzonTemplate(models.Model):
     ozon_weight_units = fields.Char(string='Единицы измерения веса', default='g')
     ozon_weight = fields.Char(string='Вес в граммах')
     ozon_vat = fields.Selection(string='НДС', selection=[('0.2', '20%'), ('0.1', '10%'), ('0', '0%')], default='0.2')
-
+    ozon_last_upload_task_id = fields.Char(string='ID последней загрузки')
 
     # Make 'ozon_category_tree' readonly if the product is new
     @api.onchange('name')
@@ -42,6 +44,7 @@ class ProductOzonTemplate(models.Model):
         else:
             self.category_readonly = False
 
+
     def fill_the_fields(self):
         self.ozon_product_name = self.name
         self.ozon_offer_id = self.default_code
@@ -50,8 +53,85 @@ class ProductOzonTemplate(models.Model):
         print(f'********weight: {float(self.weight)}')
         self.ozon_weight = int(float(self.weight * 1000))
 
+
+    def process_ozon_images(self):
+        ozon_images = self.ozon_images
+        if ozon_images:
+            print(f'--------ozon_images: {ozon_images}')
+            ozon_images = ozon_images.replace(" ", "")
+            ozon_images = ozon_images.replace("\n", "")
+            image_list = ozon_images.split(',')
+        else:
+            image_list = []
+        return image_list
+
+
+
+
     def upload_product_to_ozon(self):
-        pass
+        url = "https://api-seller.ozon.ru/v2/product/import"
+        attributes_list = []
+        for attribute in self.ozon_attribute_line:
+            print(f'***********attribute: {attribute}')
+            attribute_item = {
+                "complex_id": 0,
+                "id": int(attribute.attribute_id),
+                "values": [{"dictionary_value_id": int(attribute.value_ids.ozon_value_id), "value": attribute.value_ids.name}]
+                }
+            attributes_list.append(attribute_item)
+        for item in attribute_item['values']:
+            if item['dictionary_value_id'] == False:
+                item.pop('dictionary_value_id')
+
+        data = {
+            "items": [
+                {
+                    "barcode": self.ozon_barcode,
+                    "category_id": int(self.ozon_category_tree.category_id),
+                    "complex_attributes": [],
+                    "currency_code": self.ozon_price_currency,
+                    "depth": int(self.ozon_depth),
+                    "dimension_unit": self.ozon_dimension_units,
+                    "height": int(self.ozon_height),
+                    "images": self.process_ozon_images(),
+                    "name": self.ozon_product_name,
+                    "offer_id": self. ozon_offer_id,
+                    "price": self.ozon_price,
+                    "primary_image": "",
+                    "vat": self.ozon_vat,
+                    "weight": int(self.ozon_weight),
+                    "weight_unit": self.ozon_weight_units,
+                    "width": int(self.ozon_width),
+
+                    "attributes": attributes_list
+                }
+            ]
+        }
+
+        try:
+            res = ozon_api.ozon_api_request_template(self=self, url=url, data=data)
+            self.message_post(body="Карточка товара загружена на Ozon")
+        #print(f'***********res: {res}')
+
+            if res["result"]["task_id"]:
+                self.ozon_last_upload_task_id = res["result"]["task_id"]
+            return res["result"]
+        except:
+            raise UserError('Ошибка загрузки карточки товара на Ozon')
+        
+
+
+
+    def get_task_info(self):
+        url = "https://api-seller.ozon.ru/v1/product/import/info"
+        data = {"task_id": self.ozon_last_upload_task_id}
+        res = ozon_api.ozon_api_request_template(self=self, url=url, data=data)
+        print(f'***********res: {res}')
+        self.message_post(body=res['result'])
+
+
+
+
 
 
     def ozon_get_category_tree(self):
