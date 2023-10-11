@@ -1,20 +1,57 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
+
 
 
 class ProductOzonTemplate(models.Model):
     _description = 'Extension to product with Ozon template fields'
     _inherit = 'product.product'
 
-    ozon_required_attributes = fields.Char()
-    selection_field = fields.Char(string='Choose category')
+    #ozon_required_attributes = fields.Char()
+    #selection_field = fields.Char(string='Choose category')
     ozon_category_tree = fields.Many2one('ozon.category', string="Ozon Category", ondelete='cascade',
                                           domain=[('child_id', '=', False)])
-    ozon_attribute_id = fields.Many2one('ozon.attribute', string="Ozon Attribute", ondelete='cascade')
+    category_readonly = fields.Boolean(compute='_read_only_tree')
+    #ozon_attribute_id = fields.Many2one('ozon.attribute', string="Ozon Attribute", ondelete='cascade')
     #ozon_attribute_line = fields.One2many('ozon.attribute', 'product_many_ids', string="Ozon Attribute Line")
     #ozon_attribute_line = fields.One2many('ozon.attribute', 'product_id', string="Ozon Attribute Line")
     ozon_attribute_line = fields.Many2many('ozon.attribute', string="Ozon Attribute Line")
 
+    ozon_product_name = fields.Char(string='Имя на Ozon')
+    ozon_offer_id = fields.Char(string='Артикул Товара')
+    ozon_barcode = fields.Char(string='Штрихкод')
+    ozon_price = fields.Char(string='Цена на Ozon')
+    ozon_price_currency = fields.Char(string='Валюта', default='RUB')
+    ozon_primary_image = fields.Char(string='Основное изображение')
+    ozon_images = fields.Char(string='Дополнительные изображения')
+    ozon_dimension_units = fields.Char(string='Единицы измерения', default='mm')
+    ozon_height = fields.Char(string='Высота в мм')
+    ozon_width = fields.Char(string='Ширина в мм')
+    ozon_depth = fields.Char(string='Глубина в мм')
+    ozon_weight_units = fields.Char(string='Единицы измерения веса', default='g')
+    ozon_weight = fields.Char(string='Вес в граммах')
+    ozon_vat = fields.Selection(string='НДС', selection=[('0.2', '20%'), ('0.1', '10%'), ('0', '0%')], default='0.2')
 
+
+    # Make 'ozon_category_tree' readonly if the product is new
+    @api.onchange('name')
+    def _read_only_tree(self):
+        if str(self.id).startswith('NewId'):
+            print(f'********self: {self.id}')
+            self.category_readonly = True  # Make the field readonly
+        else:
+            self.category_readonly = False
+
+    def fill_the_fields(self):
+        self.ozon_product_name = self.name
+        self.ozon_offer_id = self.default_code
+        self.ozon_barcode = self.barcode
+        self.ozon_price = self.lst_price
+        print(f'********weight: {float(self.weight)}')
+        self.ozon_weight = int(float(self.weight * 1000))
+
+    def upload_product_to_ozon(self):
+        pass
 
 
     def ozon_get_category_tree(self):
@@ -26,7 +63,13 @@ class ProductOzonTemplate(models.Model):
 
     @api.onchange('ozon_category_tree')
     def ozon_get_attributes(self):
+        print(f'***********Category ID ONCHANGE {self.ozon_category_tree.category_id}')
 
+        if self.ozon_category_tree.category_id == False :
+            empty_list = {}
+            print(f'---EMPTY LIST')
+            return empty_list
+        
         get_attributes = self.env['ozon.category'].ozon_get_attributes(self.ozon_category_tree.category_id)
 
         # Populate the One2many field 'ozon_attribute_line' with the attributes in a 'lines' list
@@ -130,5 +173,7 @@ class ProductOzonTemplate(models.Model):
         #print(lines)
 
 
-# {'id': 85, 'name': 'Бренд', 'description': 'Укажите наименование бренда, под которым произведен товар. Если товар не имеет бренда, используйте значение "Нет бренда".',
-#     'type': 'String', 'is_collection': False, 'is_required': True, 'group_id': 0, 'group_name': '', 'dictionary_id': 28732849, 'is_aspect': False, 'category_dependent': True}
+    # def create(self, vals):
+    #     print(f'***********Create1(values): {vals}')
+    #     new_rec = super().create(vals)
+    #     return new_rec

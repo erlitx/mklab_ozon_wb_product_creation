@@ -44,6 +44,10 @@ class OzonCategory(models.Model):
 
     # Template method to make any OZON API request
     def ozon_api_request_template(self, url, data):
+        print(f'***********data: {data}********* {url}')
+        if data['category_id'] == [False]:
+            print(f'--------- RETURNED 0')
+            return 0
         url = url
         data = data
         company = self.env.company
@@ -104,6 +108,7 @@ class OzonCategory(models.Model):
 
     # Get the ATTRIBUTES from the Ozon API
     def ozon_get_attributes(self, category_id):
+        
         url = "https://api-seller.ozon.ru/v3/category/attribute"
         data = {
             "attribute_type": "REQUIRED",

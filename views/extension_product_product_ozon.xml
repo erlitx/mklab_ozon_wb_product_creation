@@ -8,42 +8,68 @@
         <data>
           <xpath expr="//page[@name='general_information']" position="after">
             <page string="Карточка товара Ozon" name="ozon_product">
-              <group>
 
-                <button name="ozon_get_attributes" string="Test" type="object"
-                  class="oe_highlight" />
+
+              <div style="display: flex; align-items: left; justify-content: space-between; margin-bottom: 10px;">
+                <button name="fill_the_fields" string="Заполнить поля" type="object"
+                  class="oe_highlight" style="height: 30px;" />
+                <button name="ozon_get_attributes" string="Загрузить товар в Ozon" type="object"
+                  class="oe_highlight" style="height: 30px; margin-left: 10px;" />
+              </div>
+
+              <separator string="Поля товара в Ozon" />
+              <group>
+                <group>
+                  <field name="ozon_product_name" />
+                  <field name="ozon_offer_id" />
+                  <field name="ozon_barcode" />
+                  <field name="ozon_price" />
+                  <field name="ozon_price_currency" />
+                  <field name="ozon_primary_image" />
+                  <field name="ozon_images" />
+                </group>
+                <group>
+                  <field name="ozon_dimension_units" />
+                  <field name="ozon_height" />
+                  <field name="ozon_width" />
+                  <field name="ozon_depth" />
+                  <field name="ozon_weight_units" />
+                  <field name="ozon_weight" />
+                  <field name="ozon_vat" />
+                </group>
               </group>
               <group>
+
+
                 <group name="new_group">
-                  <field name="ozon_category_tree" />
-                  <!-- <field name="ozon_attribute_id" /> -->
-                  
+                  <field name="ozon_category_tree"
+                    attrs="{'readonly': [('category_readonly', '=', True)]}" />
+                  <field name="category_readonly" invisible="1" />
                 </group>
-                <field name="ozon_attribute_line"> 
+                <field name="ozon_attribute_line">
                   <tree editable="top">
-                    <field name="id" />
-                    <field name="attribute_id" />
-                    <field name="name" />
-                    <field name="type" />
-                    <field name="is_required" />
-                    <field name="dictionary_id" />
+                    <field name="id" invisible="1" />
+                    <field name="attribute_id" readonly="1" invisible="1" />
+                    <field name="name" readonly="1" />
+                    <field name="description" readonly="1" />
+                    <field name="is_required" readonly="1" invisible="1" />
+                    <field name="dictionary_id" readonly="1" invisible="1" />
                     <field name="value_ids" />
                   </tree>
                   <form>
                     <group>
-                    <field name="attribute_id" />
-                    <field name="name" />
-                    <field name="type" />
-                    <field name="is_required" />
-                    <field name="dictionary_id" />
-                    <field name="value_ids"/>
-                    <field name="category_id"/>
-                    <field name="id"/>
-                    <field name="product_id"/>
-                    <group>
-                      <field name="product_many_ids" widget="many2many_tags" />
-                    </group>
-
+                      <field name="attribute_id" readonly="1" />
+                      <field name="name" readonly="1" />
+                      <field name="type" />
+                      <field name="is_required" />
+                      <field name="dictionary_id" />
+                      <field name="value_ids" />
+                      <field name="category_id" />
+                      <field name="id" />
+                      <field name="product_id" />
+                      <group>
+                        <field name="product_many_ids" widget="many2many_tags" />
+                      </group>
 
 
                     </group>
