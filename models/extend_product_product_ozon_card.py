@@ -9,8 +9,6 @@ class ProductOzonTemplate(models.Model):
     _description = 'Extension to product with Ozon template fields'
     _inherit = 'product.product'
 
-    #ozon_required_attributes = fields.Char()
-    #selection_field = fields.Char(string='Choose category')
     ozon_category_tree = fields.Many2one('ozon.category', string="Ozon Category", ondelete='cascade',
                                           domain=[('child_id', '=', False)])
     category_readonly = fields.Boolean(compute='_read_only_tree')
@@ -35,25 +33,29 @@ class ProductOzonTemplate(models.Model):
     ozon_vat = fields.Selection(string='НДС', selection=[('0.2', '20%'), ('0.1', '10%'), ('0', '0%')], default='0.2')
     ozon_last_upload_task_id = fields.Char(string='ID последней загрузки')
 
-    # Make 'ozon_category_tree' readonly if the product is new
+    #Display message
+    def update_category_tree(self):
+        self.env['ozon.category'].get_ozon_catalog_tree()
+
+
+    # Make 'ozon_category_tree' readonly if the product is new to prevent an Error 
+    # when category is selected anf onchange method is called
     @api.onchange('name')
     def _read_only_tree(self):
         if str(self.id).startswith('NewId'):
-            print(f'********self: {self.id}')
             self.category_readonly = True  # Make the field readonly
         else:
             self.category_readonly = False
 
-
+    # Fill the fields with the values from the product
     def fill_the_fields(self):
         self.ozon_product_name = self.name
         self.ozon_offer_id = self.default_code
         self.ozon_barcode = self.barcode
         self.ozon_price = self.lst_price
-        print(f'********weight: {float(self.weight)}')
         self.ozon_weight = int(float(self.weight * 1000))
 
-
+    # Make images URL in the format required by Ozon API
     def process_ozon_images(self):
         ozon_images = self.ozon_images
         if ozon_images:
@@ -65,14 +67,11 @@ class ProductOzonTemplate(models.Model):
             image_list = []
         return image_list
 
-
-
-
+    # Upload product to Ozon
     def upload_product_to_ozon(self):
         url = "https://api-seller.ozon.ru/v2/product/import"
         attributes_list = []
         for attribute in self.ozon_attribute_line:
-            print(f'***********attribute: {attribute}')
             attribute_item = {
                 "complex_id": 0,
                 "id": int(attribute.attribute_id),
@@ -82,7 +81,6 @@ class ProductOzonTemplate(models.Model):
         for item in attribute_item['values']:
             if item['dictionary_value_id'] == False:
                 item.pop('dictionary_value_id')
-
         data = {
             "items": [
                 {
@@ -107,12 +105,9 @@ class ProductOzonTemplate(models.Model):
                 }
             ]
         }
-
         try:
             res = ozon_api.ozon_api_request_template(self=self, url=url, data=data)
             self.message_post(body="Карточка товара загружена на Ozon")
-        #print(f'***********res: {res}')
-
             if res["result"]["task_id"]:
                 self.ozon_last_upload_task_id = res["result"]["task_id"]
             return res["result"]
@@ -120,140 +115,112 @@ class ProductOzonTemplate(models.Model):
             raise UserError('Ошибка загрузки карточки товара на Ozon')
         
 
-
-
+    # Get the status of the last upload task and post a message
     def get_task_info(self):
         url = "https://api-seller.ozon.ru/v1/product/import/info"
         data = {"task_id": self.ozon_last_upload_task_id}
-        res = ozon_api.ozon_api_request_template(self=self, url=url, data=data)
-        print(f'***********res: {res}')
-        self.message_post(body=res['result'])
-
-
-
-
+        try:
+            res = ozon_api.ozon_api_request_template(self=self, url=url, data=data)
+            if res['result']['items'][0]['status'] == 'imported' and res['result']['items'][0]['errors'] == []:
+                self.message_post(body="Карточка товара загружена на Ozon")
+                reply = f"Товар был успешно загружен на Ozon: \n - product_id:\
+                      {res['result']['items'][0]['product_id']}"\
+                      f"\n - task_id: {self.ozon_last_upload_task_id}"
+                self.message_post(body=reply)
+        except:
+            raise UserError('Ошибка загрузки карточки товара на Ozon')
 
 
     def ozon_get_category_tree(self):
-        # records_to_delete = self.env['ozon.category'].search([])
-        # if records_to_delete:
-        #     records_to_delete.unlink()
-        # get_tree = self.env['ozon.category'].get_ozon_catalog_tree()
         pass
 
+    # Update the Attribute records and Attribute Value records from Ozon API
+    # Populate the One2many field 'ozon_attribute_line' with the attributes recieved
     @api.onchange('ozon_category_tree')
     def ozon_get_attributes(self):
-        print(f'***********Category ID ONCHANGE {self.ozon_category_tree.category_id}')
+        try:
+            print(f'***********Category ID ONCHANGE {self.ozon_category_tree.category_id}')
 
-        if self.ozon_category_tree.category_id == False :
-            empty_list = {}
-            print(f'---EMPTY LIST')
-            return empty_list
-        
-        get_attributes = self.env['ozon.category'].ozon_get_attributes(self.ozon_category_tree.category_id)
+            if self.ozon_category_tree.category_id == False :
+                empty_list = {}
+                print(f'---EMPTY LIST')
+                return empty_list
+            
+            get_attributes = self.env['ozon.category'].ozon_get_attributes(self.ozon_category_tree.category_id)
 
-        # Populate the One2many field 'ozon_attribute_line' with the attributes in a 'lines' list
+            # Populate the One2many field 'ozon_attribute_line' with the attributes in a 'lines' list
 
-        # First check if there are any records already in 'ozon.attribute' model 
-        # with the same Ozon category ID user selected in the 'ozon_category_tree' field
-        category_record = self.env['ozon.category'].search([('category_id', '=', self.ozon_category_tree.category_id)])
-        #print(f'***********Category found: {category_record}')
+            # First check if there are any records already in 'ozon.attribute' model 
+            # with the same Ozon category ID user selected in the 'ozon_category_tree' field
+            category_record = self.env['ozon.category'].search([('category_id', '=', self.ozon_category_tree.category_id)])
 
-        # Get the list of Ids already existing records in the 'ozon.attribute' model
-        attribute_values_ids = self.env['ozon.attribute'].search([('category_id', '=', category_record.id)]).ids
-        #print(f'***********Attribute Values found: {attribute_values_ids}')
+            # Get the list of Ids already existing records in the 'ozon.attribute' model
+            attribute_values_ids = self.env['ozon.attribute'].search([('category_id', '=', category_record.id)]).ids
+            #print(f'***********Attribute Values found: {attribute_values_ids}')
 
-        #Iterate through the list of attributes and add them to the 'lines' list
-        
-        if attribute_values_ids:
-            print("***********Existing attributes found****************")
-            lines = [(5, 0, 0)]
-            for category_id in attribute_values_ids:
-                #print(f'***********Existing category found: {category_id}')
-                lines.append((4, category_id, 0))
-                #print(f'@@@@@@@@@ self: {self._origin.id}')
+            #Iterate through the list of attributes and add them to the 'lines' list
+            if attribute_values_ids:
+                print("***********Existing attributes found****************")
+                lines = [(5, 0, 0)]
+                for category_id in attribute_values_ids:
+                    #print(f'***********Existing category found: {category_id}')
+                    lines.append((4, category_id, 0))
+                    attribute_line = self.env['ozon.attribute'].browse(category_id)
 
+                    #### Populate product_many_ids
+                    # The list with Ids of all the products associated with this attribute record
+                    products_ids_to_add = attribute_line.product_many_ids.ids
+                    # Convert the list to a set to eliminate duplicates
+                    products_ids_set = set(products_ids_to_add)
+                    # Add the new ID to the set
+                    products_ids_set.add(self._origin.id)
+                    # Convert the set back to a list
+                    products_ids_to_add = list(products_ids_set)
+                    attribute_line.write({'product_many_ids': [(6, 0, products_ids_to_add)]})
+                    # Now the 'lines' list contains the Ids of the existing records 
+                    # in the 'ozon.attribute' model
+                    
+            # If there are no attributes in the One2many field, create a new list of attributes
+            else:
+                print("***********No existing attributes found****************")
+                lines = [(5, 0, 0)]
+                for attribute in get_attributes:
+                    vals = {"product_id": self._origin.id, 
+                            "attribute_id": attribute['id'],
+                            "name": attribute['name'], 
+                            "is_required": attribute['is_required'], 
+                            "is_collection": attribute['is_collection'], 
+                            "type": attribute['type'], 
+                            "description": attribute['description'], 
+                            "group_id": attribute['group_id'], 
+                            "group_name": attribute['group_name'], 
+                            "dictionary_id": attribute['dictionary_id'], 
+                            "is_aspect": attribute['is_aspect'], 
+                            "category_id": self.ozon_category_tree.id,
+                            }
 
-                attribute_line = self.env['ozon.attribute'].browse(category_id)
-                #print(f'--------Attribute Line: {attribute_line}')
-                #print(f'*************product_many_ids: {attribute_line.product_many_ids.ids}')
+                    ##### Create a attribute records 
+                    attribute_line = self.env['ozon.attribute'].create(vals)
+                    #### Append lines with this records
+                    lines.append((4, attribute_line.id, 0))
 
-                #### Populate product_many_ids
-                # The list with Ids of all the products associated with this attribute record
-                products_ids_to_add = attribute_line.product_many_ids.ids
-                # Convert the list to a set to eliminate duplicates
-                products_ids_set = set(products_ids_to_add)
+                    #### Create ozon.attribute.values for each attribute
+                    ### Get attribute.values by Ozon API
+                    #Check if attribute 'dictionary_id' is not 0
+                    if attribute['dictionary_id'] != 0:
+                        attribute_values = self.env['ozon.category'].ozon_get_attributes_value(
+                                                                                self.ozon_category_tree.category_id, 
+                                                                                attribute['id']
+                                                                                )
+                        print(f'-----attribute_values: {attribute_values}')
+                        for value in attribute_values:
 
-                # Add the new ID to the set
-                products_ids_set.add(self._origin.id)
-
-                # Convert the set back to a list
-                products_ids_to_add = list(products_ids_set)
-
-                #print(f'!!!!!!!!products_ids_to_add: {products_ids_to_add}')
-                attribute_line.write({'product_many_ids': [(6, 0, products_ids_to_add)]})
-                # Now the 'lines' list contains the Ids of the existing records 
-                # in the 'ozon.attribute' model
-
-
-                
-        # # If there are no attributes in the One2many field, create a new list of attributes
-        else:
-            print("***********No existing attributes found****************")
-            lines = [(5, 0, 0)]
-            #lines = []
-            for attribute in get_attributes:
-                vals = {"product_id": self._origin.id, 
-                        "attribute_id": attribute['id'],
-                        "name": attribute['name'], 
-                        "is_required": attribute['is_required'], 
-                        "is_collection": attribute['is_collection'], 
-                        "type": attribute['type'], 
-                        "description": attribute['description'], 
-                        "group_id": attribute['group_id'], 
-                        "group_name": attribute['group_name'], 
-                        "dictionary_id": attribute['dictionary_id'], 
-                        "is_aspect": attribute['is_aspect'], 
-                        "category_id": self.ozon_category_tree.id,
-                        #"value_ids": [(0, 0, [39])],
-                        #"product_many_ids": [(0, 0, [self._origin.id])],
-                        #"product_many_ids": [(6, 0, [self._origin.id])],
-                        }
-                #print(f'***********NEW VALS: {vals}')
-                #lines.append((0, 0, vals))
-
-                ##### Create a attribute records 
-                attribute_line = self.env['ozon.attribute'].create(vals)
-                #print(f'-----attribute_line: {attribute_line.id}')
-                #### Append lines with this records
-                lines.append((4, attribute_line.id, 0))
-
-                #### Create ozon.attribute.values for each attribute
-                ### Get attribute.values by Ozon API
-                #Check if attribute 'dictionary_id' is not 0
-                if attribute['dictionary_id'] != 0:
-                    attribute_values = self.env['ozon.category'].ozon_get_attributes_value(
-                                                                             self.ozon_category_tree.category_id, 
-                                                                             attribute['id']
-                                                                             )
-                    print(f'-----attribute_values: {attribute_values}')
-                    for value in attribute_values:
-
-                        self.env['ozon.attribute.value'].create(
-                            {'attribute_id': [attribute_line.id], 
-                            'name': value['value'],
-                            'ozon_value_id': value['id'],}
-                            )
-            #{'id': 5055881, 'value': 'Sunshine', 'info': '', 
-            # 'picture': 'https://cdn1.ozone.ru/s3/multimedia-i/6010930878.jpg'},
-
-
-        # Inser records into Many2many field
-        self.ozon_attribute_line = lines
-        #print(lines)
-
-
-    # def create(self, vals):
-    #     print(f'***********Create1(values): {vals}')
-    #     new_rec = super().create(vals)
-    #     return new_rec
+                            self.env['ozon.attribute.value'].create(
+                                {'attribute_id': [attribute_line.id], 
+                                'name': value['value'],
+                                'ozon_value_id': value['id'],}
+                                )
+            # Inser records into Many2many field
+            self.ozon_attribute_line = lines
+        except Exception as e:
+            raise UserError('Ошибка получения атрибутов с Ozon')

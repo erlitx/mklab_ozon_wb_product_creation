@@ -16,6 +16,7 @@ class ProductSelect(models.Model):
                              ('connected', 'Connected')], string='State', default='draft')
     task_id = fields.Char(string='Task ID')
     product_ids = fields.Many2many('product.product', string='Product')
+    message = fields.Text('Message')
 
     @api.model
     def default_get(self, field_names):
@@ -32,14 +33,6 @@ class ProductSelect(models.Model):
         except Exception as e:
             raise exceptions.UserError("Error in default_get: {}".format(e))
 
-    # def upload_to_ozon(self):
-    #     print(f'-----self.product_ids: {self.product_ids}')
-    #     for product_id in self.product_ids:
-    #         print(f'-----product_id: {product_id.name}')
-    #         product = self.env['product.product'].search(
-    #             [('id', '=', product_id.id)])
-    #         pprint.pprint(
-    #             f"-----product: {self.env['product.product'].browse(product_id.id).read()}")
 
     def get_products_from_ozon(self):
         url = "https://api-seller.ozon.ru/v2/product/list"

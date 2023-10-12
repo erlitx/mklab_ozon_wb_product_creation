@@ -16,7 +16,8 @@
                   class="oe_highlight" style="height: 30px;" />
                 <button name="upload_product_to_ozon" string="Загрузить товар в Ozon" type="object"
                   class="oe_highlight" style="height: 30px; margin-left: 10px;" />
-                <button name="get_task_info" string="Проверить статус последней загрузки" type="object"
+                <button name="get_task_info" string="Проверить статус последней загрузки"
+                  type="object"
                   class="oe_highlight" style="height: 30px; margin-left: 10px;" />
               </div>
 
@@ -76,10 +77,16 @@
 
 
                     </group>
-                  </form>
+
+                    </form>
                 </field>
               </group>
 
+                <button name="update_category_tree" string="Загрузить Ozon категории"
+                  type="object"
+                  class="oe_highlight" style="height: 30px; margin-left: 10px;"
+                  confirm="Не обновляйтек категрии если они уже присутствую. Все равно обновить?" />
+ 
               <!-- widget="one2many_list"> -->
               <!-- <tree editable="bottom">
                   <field name="category_id" string="Category ID" invisible="0" />

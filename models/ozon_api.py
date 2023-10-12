@@ -18,7 +18,7 @@ def ozon_api_request_template(self, url, data):
     }
 
     data_json = json.dumps(data)
-    print(f'***********data_json: {data_json}')
+    #print(f'***********data_json: {data_json}')
     response = requests.post(url, headers=headers, data=data_json)
     if response.status_code == 200:
         try:

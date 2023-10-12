@@ -1210,3 +1210,58 @@ data_json: {
     }
 ]
 }
+
+########TRY##########
+data_json: {
+"items": [
+    {
+        "barcode": "123456",
+        "category_id": 17035533,
+        "complex_attributes": [],
+        "currency_code": "RUB",
+        "depth": 200,
+        "dimension_unit": "mm",
+        "height": 200,
+        "images": [],
+        "name": "\u041d\u0430\u0431\u043e\u0440 \u041f\u0440\u0438\u0431\u043e\u0440",
+        "offer_id": "AMP-PRB",
+        "price": "300.0",
+        "primary_image": "",
+        "vat": "0.2",
+        "weight": 1000,
+        "weight_unit": "g",
+        "width": 200,
+        "attributes": [
+            {
+                "complex_id": 0,
+                "id": 85,
+                "values": [
+                    {
+                        "dictionary_value_id": 5065052,
+                        "value": "Panasonic"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 8229,
+                "values": [
+                    {
+                        "dictionary_value_id": 92917,
+                        "value": "\u041d\u0430\u0431\u043e\u0440 \u0434\u043b\u044f \u043e\u043f\u044b\u0442\u043e\u0432"
+                    }
+                ]
+            },
+            {
+                "complex_id": 0,
+                "id": 9048,
+                "values": [
+                    {
+                        "value": "\u041d\u043e\u0432\u044b\u0439"
+                    }
+                ]
+            }
+        ]
+    }
+]
+}

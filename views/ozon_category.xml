@@ -1,7 +1,24 @@
 <odoo>
     <data>
 
-        <!-- ozon.category -->
+        <!-- ################ozon.category############### -->
+        <!-- Action for menu -->
+        <record id="action_tree_message_button_2" model="ir.actions.server">
+            <field name="name">Open Confirm Message</field>
+            <field name="model_id" ref="model_ozon_category"/>
+            <field name="state">code</field>
+            <field name="code">model.open_confirm_message()</field>
+        </record>
+
+        <!--  -->
+        <menuitem id="custom_tree_box" name="Обновить категории OZON"
+            parent="sale.menu_sale_general_settings" action="action_tree_message_button_2"
+            sequence="104" />
+
+        <!--     -->
+
+
+        <!-- ################ozon.category############### -->
 
         <!-- Action for tree view -->
         <record id="action_get_ozon_categories" model="ir.actions.act_window">
@@ -35,7 +52,7 @@
         </record>
 
 
-        <!-- ozon.attribute -->
+        <!-- ############### ozon.attribute ################-->
 
         <!-- Action for tree view -->
         <record id="action_ozon_attributes" model="ir.actions.act_window">
@@ -80,29 +97,28 @@
             <field name="arch" type="xml">
                 <form string="Ozon Categories">
                     <group>
-                    <field name="id" />
-                    <field name="name" />
-                    <field name="title" />
-                    <field name="attribute_id" />
-                    <field name="description" />
-                    <field name="type" />
-                    <field name="is_required" />
-                    <field name="dictionary_id" />
-                    <field name="category_id" />
-                    <field name="product_many_ids" widget="many2many_tags" />
-                    <field name="value_ids"/>
-                </group>
-                <group>
-                    <field name="product_id"/>
-                </group>
+                        <field name="id" />
+                        <field name="name" />
+                        <field name="title" />
+                        <field name="attribute_id" />
+                        <field name="description" />
+                        <field name="type" />
+                        <field name="is_required" />
+                        <field name="dictionary_id" />
+                        <field name="category_id" />
+                        <field name="product_many_ids" widget="many2many_tags" />
+                        <field name="value_ids" />
+                    </group>
+                    <group>
+                        <field name="product_id" />
+                    </group>
 
                 </form>
             </field>
         </record>
 
 
-
-        <!-- ozon.attribute.values -->
+        <!-- ############### ozon.attribute.values #################-->
 
         <!-- Action for tree view -->
         <record id="action_ozon_attribute_value" model="ir.actions.act_window">
@@ -125,7 +141,7 @@
             <field name="model">ozon.attribute.value</field>
             <field name="arch" type="xml">
                 <tree string="Ozon Categories">
-                    <field name="ozon_value_id" string="Ozon Value ID"/>
+                    <field name="ozon_value_id" string="Ozon Value ID" />
                     <field name="name" />
                     <field name="value" />
                     <field name="attribute_id" />

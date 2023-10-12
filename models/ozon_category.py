@@ -42,6 +42,7 @@ class OzonCategory(models.Model):
                     item['children'], category.id)
 
 
+
     # Template method to make any OZON API request
     def ozon_api_request_template(self, url, data):
         print(f'***********data: {data}********* {url}')
@@ -58,7 +59,6 @@ class OzonCategory(models.Model):
             'Content-Type': 'application/json'
         }
         data_json = json.dumps(data)
-        #print(f'***********data_json: {data_json}')
         response = requests.post(url, headers=headers, data=data_json)
         if response.status_code == 200:
             try:
@@ -94,7 +94,6 @@ class OzonCategory(models.Model):
                 res = response.json()
                 self.env['ozon.category'].category_tree_recursion_create(
                     res['result'])
-                # print(res['result'])
                 # Process the JSON content if it can be parsed
             except Exception as e:
                 _logger.warning(
