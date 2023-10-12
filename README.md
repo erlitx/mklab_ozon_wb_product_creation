@@ -32,3 +32,7 @@ This module enables seamless integration between your Odoo instance and Ozon, al
 ## Support and Assistance
 
 If you encounter any issues or require assistance with the module, please contact our support team at [mklab](mailto:).
+
+## Compatibility
+
+This module is compatible with Odoo versions 14, 15, and 16.
